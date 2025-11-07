@@ -66,35 +66,47 @@ async function processUserInput(input) {
   if (urls && urls.length > 0) {
     const url = urls[0];
     let platform = '';
-    if (url.includes('tiktok.com')) {
+    let hostname = '';
+    
+    try {
+      const urlObj = new URL(url);
+      hostname = urlObj.hostname.toLowerCase();
+    } catch (error) {
+      console.log('');
+      console.log(chalk.red(' • Invalid URL format.'));
+      showStatusFooter();
+      return true;
+    }
+    
+    if (hostname.endsWith('tiktok.com') || hostname === 'tiktok.com') {
       platform = 'TikTok';
       showProcessing('Fetching', ` Analyzing ${platform} video...`);
       await downloadTikTok(url, currentDownloadPath);
-    } else if (url.includes('facebook.com') || url.includes('fb.watch')) {
+    } else if (hostname.endsWith('facebook.com') || hostname === 'facebook.com' || hostname.endsWith('fb.watch') || hostname === 'fb.watch') {
       platform = 'Facebook';
       showProcessing('Fetching', ` Analyzing ${platform} video...`);
       await downloadFacebook(url, currentDownloadPath);
-    } else if (url.includes('instagram.com')) {
+    } else if (hostname.endsWith('instagram.com') || hostname === 'instagram.com') {
       platform = 'Instagram';
       showProcessing('Fetching', ` Analyzing ${platform} media...`);
       await downloadInstagram(url, currentDownloadPath);
-    } else if (url.includes('twitter.com') || url.includes('x.com')) {
+    } else if (hostname.endsWith('twitter.com') || hostname === 'twitter.com' || hostname.endsWith('x.com') || hostname === 'x.com') {
       platform = 'Twitter';
       showProcessing('Fetching', ` Analyzing ${platform} video...`);
       await downloadTwitter(url, currentDownloadPath);
-    } else if (url.includes('douyin.com')) {
+    } else if (hostname.endsWith('douyin.com') || hostname === 'douyin.com') {
       platform = 'Douyin';
       showProcessing('Fetching', ` Analyzing ${platform} video...`);
       await downloadDouyin(url, currentDownloadPath);
-    } else if (url.includes('spotify.com')) {
+    } else if (hostname.endsWith('spotify.com') || hostname === 'spotify.com') {
       platform = 'Spotify';
       showProcessing('Fetching', ` Analyzing ${platform} track...`);
       await downloadSpotify(url, currentDownloadPath);
-    } else if (url.includes('pinterest.com') || url.includes('pin.it')) {
+    } else if (hostname.endsWith('pinterest.com') || hostname === 'pinterest.com' || hostname.endsWith('pin.it') || hostname === 'pin.it') {
       platform = 'Pinterest';
       showProcessing('Fetching', ` Analyzing ${platform} pin...`);
       await downloadPinterest(url, currentDownloadPath);
-    } else if (url.includes('music.apple.com')) {
+    } else if (hostname.endsWith('apple.com') && url.includes('music.apple.com')) {
       platform = 'Apple Music';
       showProcessing('Fetching', ` Analyzing ${platform} track...`);
       await downloadAppleMusic(url, currentDownloadPath);

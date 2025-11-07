@@ -9,7 +9,7 @@ async function downloadTikTok(url, basePath = 'resultdownload_preniv') {
   const spinner = ora(' Fetching TikTok video data...').start();
   
   let data = null;
-  let apiVersion = 'v2';
+  let apiVersion;
   
   try {
     try {

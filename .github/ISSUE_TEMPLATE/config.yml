@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/arsya371/prenivdlapp-cli#readme
+    about: Check the README for usage instructions and examples
+  - name: 💬 Discussions
+    url: https://github.com/arsya371/prenivdlapp-cli/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: ⭐ Star the Project
+    url: https://github.com/arsya371/prenivdlapp-cli
+    about: If you find this project useful, please give it a star!

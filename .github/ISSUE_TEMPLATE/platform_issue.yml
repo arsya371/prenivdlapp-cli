@@ -1,0 +1,110 @@
+name: 🌐 Platform-Specific Issue
+description: Report an issue with a specific platform (TikTok, Instagram, etc.)
+title: "[Platform]: "
+labels: ["platform-issue", "needs-investigation"]
+assignees:
+  - arsya371
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report issues specific to downloading from a particular platform.
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform is having issues?
+      options:
+        - TikTok
+        - Facebook
+        - Instagram
+        - Twitter/X
+        - Douyin
+        - Spotify
+        - Apple Music
+        - Pinterest
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: prenivdlapp-cli Version
+      placeholder: "e.g., 1.1.3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of issue are you experiencing?
+      options:
+        - Download fails completely
+        - Download succeeds but file is corrupted
+        - Wrong content downloaded
+        - API timeout/connection error
+        - File size limit exceeded
+        - Quality issues
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+      description: Describe the issue you're experiencing
+      placeholder: What's happening with this platform?
+    validations:
+      required: true
+
+  - type: textarea
+    id: url-example
+    attributes:
+      label: Example URL
+      description: Provide an example URL that demonstrates the issue (if safe to share)
+      placeholder: https://...
+    validations:
+      required: false
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error Message
+      description: Copy and paste any error messages
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: How often does this issue occur?
+      options:
+        - Always (100%)
+        - Often (>50%)
+        - Sometimes (25-50%)
+        - Rarely (<25%)
+        - Only with specific URLs
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Have you found any workaround for this issue?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Any other relevant information
+    validations:
+      required: false

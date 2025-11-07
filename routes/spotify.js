@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const ora = require('ora');
 const inquirer = require('inquirer');
 const { getApi } = require('./api');
-const { downloadFile } = require('../utils/download');
+const { downloadFile, MAX_FILE_SIZE } = require('../utils/download');
 
 async function downloadSpotify(url, basePath = 'resultdownload_preniv') {
   const spinner = ora(' Fetching Spotify track data...').start();
@@ -70,7 +70,9 @@ async function downloadSpotify(url, basePath = 'resultdownload_preniv') {
     const downloadSpinner = ora(` Downloading ${selectedDownload.type}...`).start();
     const extension = selectedDownload.type === 'audio' ? 'mp3' : 'jpg';
     const filename = `${data.data.songTitle || 'Spotify'}_${selectedDownload.type}_${Date.now()}.${extension}`;
-    await downloadFile(selectedDownload.url, filename, downloadSpinner, basePath);
+    const maxSize = selectedDownload.type === 'audio' ? MAX_FILE_SIZE : null;
+    await downloadFile(selectedDownload.url, filename, downloadSpinner, basePath, maxSize);
+    
   } catch (error) {
     spinner.fail(chalk.red(' Error fetching Spotify track'));
     if (error.code === 'ECONNABORTED') {

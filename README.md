@@ -1,6 +1,6 @@
 # Social Media Downloader CLI (PRENIVDL)
 
-A powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, and Spotify. Designed with beautiful ASCII art and interactive prompts.
+A powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, and Pinterest. Designed with beautiful ASCII art and interactive prompts.
 
 ## Features
 
@@ -10,7 +10,8 @@ A powerful command-line interface for downloading videos and media from TikTok, 
 - **Twitter Downloader** - Download videos from Twitter/X posts
 - **Douyin Downloader** - Download videos from Douyin (Chinese TikTok) with multiple quality options
 - **Spotify Downloader** - Download tracks (MP3) and cover images from Spotify
-- **Beautiful CLI Interface** - Colorful output with ASCII art banner
+- **Pinterest Downloader** - Download images, videos, and GIFs from Pinterest pins with multiple quality options
+- **Beautiful CLI Interface** - Colorful output with ASCII art banner and custom prompt
 - **Interactive Mode** - User-friendly prompts and selections
 - **Fast Downloads** - Efficient downloading with progress indicators
 
@@ -110,10 +111,22 @@ Once in interactive mode, you can use these commands:
 
 Example:
 ```
-> /setpath my_downloads
-> /path
+prenivdlapp » /setpath my_downloads
+prenivdlapp » /path
 Current download path: my_downloads
 ```
+
+### Supported Platforms & URL Examples
+
+Simply paste any of these URLs in interactive mode:
+
+- **TikTok**: `https://www.tiktok.com/@username/video/1234567890`
+- **Facebook**: `https://www.facebook.com/watch/?v=1234567890` or `https://fb.watch/abc123`
+- **Instagram**: `https://www.instagram.com/p/ABC123/`
+- **Twitter/X**: `https://twitter.com/user/status/1234567890` or `https://x.com/user/status/1234567890`
+- **Douyin**: `https://www.douyin.com/video/1234567890`
+- **Spotify**: `https://open.spotify.com/track/ABC123`
+- **Pinterest**: `https://www.pinterest.com/pin/1234567890/` or `https://pin.it/abc123`
 
 ### Download Organization
 
@@ -125,6 +138,7 @@ Downloaded files are organized by platform with timestamps:
 - **Twitter**: `twitter_video_[timestamp].mp4`
 - **Douyin**: `douyin_video_[timestamp].mp4`
 - **Spotify**: `spotify_audio_[timestamp].mp3` or `spotify_image_[timestamp].jpg`
+- **Pinterest**: `pinterest_[pin_id]_[quality].[extension]`
 
 All files are saved to the specified directory (default: `resultdownload_preniv`).
 

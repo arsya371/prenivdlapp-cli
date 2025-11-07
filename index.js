@@ -100,7 +100,7 @@ async function processUserInput(input) {
       platform = 'Instagram';
       showProcessing('Fetching', ` Analyzing ${platform} media...`);
       await downloadInstagram(url, currentDownloadPath);
-    } else if (hostname.endsWith('twitter.com') || hostname === 'twitter.com' || hostname.endsWith('x.com') || hostname === 'x.com') {
+    } else if (hostname.endsWith('twitter.com') || hostname === 'twitter.com' || hostname === 'x.com') {
       platform = 'Twitter';
       showProcessing('Fetching', ` Analyzing ${platform} video...`);
       await downloadTwitter(url, currentDownloadPath);

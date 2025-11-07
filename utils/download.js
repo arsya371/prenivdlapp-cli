@@ -37,6 +37,7 @@ async function downloadFile(url, filename, spinner, basePath = 'resultdownload_p
       fs.mkdirSync(basePath, { recursive: true });
     }
     const fullPath = path.join(basePath, filename);
+    
     const response = await axios({
       method: 'GET',
       url: url,

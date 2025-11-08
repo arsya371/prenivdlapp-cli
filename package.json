@@ -10,7 +10,7 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": ">= 23.x"
+    "node": ">= 20.x"
   },
   "repository": {
     "type": "git",

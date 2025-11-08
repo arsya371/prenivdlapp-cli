@@ -59,7 +59,6 @@ async function downloadFacebook(url, basePath = 'resultdownload_preniv') {
       return;
     }
 
-    // Download the selected file
     const downloadSpinner = ora(` Downloading ${selectedDownload.resolution} ${selectedDownload.format}...`).start();
     const filename = `facebook_${selectedDownload.resolution}_${Date.now()}.${selectedDownload.format}`;
     await downloadFile(selectedDownload.url, filename, downloadSpinner, basePath);

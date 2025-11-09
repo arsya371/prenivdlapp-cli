@@ -5,7 +5,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/arsya371/prenivdlapp-cli?style=social)](https://github.com/arsya371/prenivdlapp-cli)
 [![GitHub Forks](https://img.shields.io/github/forks/arsya371/prenivdlapp-cli?style=social)](https://github.com/arsya371/prenivdlapp-cli/fork)
 
-**Free & Open Source Social Media Downloader CLI** - Download videos, images, and audio from 11+ platforms including TikTok, Instagram, Facebook, Twitter/X, YouTube, Spotify, and more.
+**Free & Open Source Social Media Downloader CLI** - Download videos, images, and audio from 13+ platforms including TikTok, Instagram, Facebook, Twitter/X, YouTube, Spotify, RedNote/Xiaohongshu, Threads, and more.
 
 ## Key Features
 
@@ -20,6 +20,8 @@
 - **YouTube Downloader** - Download videos and audio from YouTube with format selection (video with audio, video only, audio only)
 - **CapCut Downloader** - Download videos from CapCut with quality options (HD No Watermark, No Watermark, Watermark)
 - **Bluesky Downloader** - Download images and videos from Bluesky posts
+- **RedNote/Xiaohongshu Downloader** - Download videos and images from RedNote/Xiaohongshu posts with quality selection
+- **Threads Downloader** - Download videos from Threads posts
 - **Beautiful CLI Interface** - Colorful output with ASCII art banner and custom prompt
 - **Interactive Mode** - User-friendly prompts and selections
 - **Fast Downloads** - Efficient downloading with progress indicators
@@ -140,6 +142,8 @@ Simply paste any of these URLs in interactive mode:
 - **YouTube**: `https://www.youtube.com/watch?v=ABC123` or `https://youtu.be/ABC123`
 - **CapCut**: `https://www.capcut.com/tv2/ABC123/`
 - **Bluesky**: `https://bsky.app/profile/user.bsky.social/post/ABC123`
+- **RedNote/Xiaohongshu**: `https://www.xiaohongshu.com/explore/ABC123` or `https://xhslink.com/ABC123`
+- **Threads**: `https://www.threads.net/@username/post/ABC123`
 
 All files are saved to the specified directory (default: `resultdownload_preniv`).
 

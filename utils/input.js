@@ -23,6 +23,7 @@ async function processUserInput(input) {
     switch (command) {
       case 'help':
         console.clear();
+        showBanner();
         showHelp();
         return true;
       case 'quit':
@@ -35,12 +36,14 @@ async function processUserInput(input) {
         showBanner();
         return true;
       case 'path':
+        showBanner();
         console.log('');
         console.log(chalk.cyan(' Current download path: ') + chalk.white(currentDownloadPath));
         console.log(chalk.gray(' Use /setpath <new_path> to change download location'));
         console.log('');
         return true;
       case 'setpath':
+        showBanner();
         const parts = trimmedInput.split(' ');
         if (parts.length < 2 || parts[1].trim() === '') {
           console.log('');
@@ -56,6 +59,7 @@ async function processUserInput(input) {
         return true;
       case 'platform':
       case 'platforms':
+        showBanner();
         console.log('');
         console.log(chalk.cyan(' Supported Platforms:'));
         console.log('');
@@ -74,6 +78,7 @@ async function processUserInput(input) {
         return true;
       case 'tutor':
       case 'tutorial':
+        showBanner();
         console.log('');
         console.log(chalk.cyan(' Quick Tutorial:'));
         console.log('');

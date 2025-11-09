@@ -67,10 +67,6 @@ function showHelp() {
   console.log(chalk.gray('   • ') + chalk.magenta('/quit') + chalk.gray('      - Exit the application'));
   
   console.log('');
-  console.log(chalk.cyan(' Path Management:'));
-  console.log(chalk.gray('   > /setpath my_downloads'));
-  console.log(chalk.gray('   > /setpath /home/user/videos'));
-  console.log('');
   showStatusFooter();
 }
 

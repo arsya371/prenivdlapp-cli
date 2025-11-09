@@ -12,6 +12,8 @@ const { downloadAppleMusic } = require('../routes/applemusic');
 const { downloadYouTube } = require('../routes/youtube');
 const { downloadCapcut } = require('../routes/capcut');
 const { downloadBluesky } = require('../routes/bluesky');
+const { downloadRedNote } = require('../routes/rednote');
+const { downloadThreads } = require('../routes/threads');
 
 const major = parseInt(process.versions.node.split('.')[0], 10);
 if (major < 20) {
@@ -134,15 +136,23 @@ async function processUserInput(input) {
       platform = 'Bluesky';
       showProcessing('Fetching', ` Analyzing ${platform} post...`);
       await downloadBluesky(url, currentDownloadPath);
+    } else if (hostname.endsWith('xiaohongshu.com') || hostname === 'xiaohongshu.com' || hostname.endsWith('xhslink.com') || hostname === 'xhslink.com') {
+      platform = 'RedNote/Xiaohongshu';
+      showProcessing('Fetching', ` Analyzing ${platform} post...`);
+      await downloadRedNote(url, currentDownloadPath);
+    } else if (hostname.endsWith('threads.net') || hostname === 'threads.net') {
+      platform = 'Threads';
+      showProcessing('Fetching', ` Analyzing ${platform} video...`);
+      await downloadThreads(url, currentDownloadPath);
     } else {
       console.log('');
-      console.log(chalk.red(' • Unsupported platform. Please provide TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, or Bluesky URLs.'));
+      console.log(chalk.red(' • Unsupported platform. Please provide TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, Bluesky, RedNote/Xiaohongshu, or Threads URLs.'));
       showStatusFooter();
     }
   } else {
     console.log('');
     console.log(chalk.gray(' • Please provide a social media URL to download from.'));
-    console.log(chalk.gray(' • Supported platforms: TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, Bluesky'));
+    console.log(chalk.gray(' • Supported platforms: TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, Bluesky, RedNote/Xiaohongshu, Threads'));
     showStatusFooter();
   }
   

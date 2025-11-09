@@ -213,7 +213,6 @@ class Normalizer {
     }
     
     let downloads = [];
-    
     if (data.downloadLinks && Array.isArray(data.downloadLinks)) {
       downloads = data.downloadLinks.map(link => ({
         url: link.url,

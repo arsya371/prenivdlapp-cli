@@ -13,6 +13,8 @@ const { downloadAppleMusic } = require('./routes/applemusic');
 const { downloadYouTube } = require('./routes/youtube');
 const { downloadCapcut } = require('./routes/capcut');
 const { downloadBluesky } = require('./routes/bluesky');
+const { downloadRedNote } = require('./routes/rednote');
+const { downloadThreads } = require('./routes/threads');
 
 program
   .name('prnvapp')
@@ -132,6 +134,25 @@ program
   .action(async (url) => {
     showBanner();
     await downloadBluesky(url, program.opts().path || currentDownloadPath);
+    showStatusFooter();
+  });
+
+program
+  .command('rednote <url>')
+  .alias('xhs')
+  .description('Download from RedNote/Xiaohongshu')
+  .action(async (url) => {
+    showBanner();
+    await downloadRedNote(url, program.opts().path || currentDownloadPath);
+    showStatusFooter();
+  });
+
+program
+  .command('threads <url>')
+  .description('Download from Threads')
+  .action(async (url) => {
+    showBanner();
+    await downloadThreads(url, program.opts().path || currentDownloadPath);
     showStatusFooter();
   });
 

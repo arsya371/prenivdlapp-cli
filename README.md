@@ -1,6 +1,6 @@
 # Social Media Downloader CLI (PRENIVDL)
 
-A powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, and CapCut. Designed with beautiful ASCII art and interactive prompts.
+A powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, and Bluesky. Designed with beautiful ASCII art and interactive prompts.
 
 ## Features
 
@@ -14,6 +14,7 @@ A powerful command-line interface for downloading videos and media from TikTok, 
 - **Apple Music Downloader** - Download tracks (MP3) and cover images from Apple Music
 - **YouTube Downloader** - Download videos and audio from YouTube with format selection (video with audio, video only, audio only)
 - **CapCut Downloader** - Download videos from CapCut with quality options (HD No Watermark, No Watermark, Watermark)
+- **Bluesky Downloader** - Download images and videos from Bluesky posts
 - **Beautiful CLI Interface** - Colorful output with ASCII art banner and custom prompt
 - **Interactive Mode** - User-friendly prompts and selections
 - **Fast Downloads** - Efficient downloading with progress indicators
@@ -133,6 +134,7 @@ Simply paste any of these URLs in interactive mode:
 - **Apple Music**: `https://music.apple.com/id/album/song-name/123456?i=789012`
 - **YouTube**: `https://www.youtube.com/watch?v=ABC123` or `https://youtu.be/ABC123`
 - **CapCut**: `https://www.capcut.com/tv2/ABC123/`
+- **Bluesky**: `https://bsky.app/profile/user.bsky.social/post/ABC123`
 
 All files are saved to the specified directory (default: `resultdownload_preniv`).
 

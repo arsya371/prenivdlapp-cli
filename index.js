@@ -12,6 +12,7 @@ const { downloadPinterest } = require('./routes/pinterest');
 const { downloadAppleMusic } = require('./routes/applemusic');
 const { downloadYouTube } = require('./routes/youtube');
 const { downloadCapcut } = require('./routes/capcut');
+const { downloadBluesky } = require('./routes/bluesky');
 
 program
   .name('prnvapp')
@@ -121,6 +122,16 @@ program
   .action(async (url) => {
     showBanner();
     await downloadCapcut(url, program.opts().path || currentDownloadPath);
+    showStatusFooter();
+  });
+
+program
+  .command('bluesky <url>')
+  .alias('bsky')
+  .description('Download from Bluesky')
+  .action(async (url) => {
+    showBanner();
+    await downloadBluesky(url, program.opts().path || currentDownloadPath);
     showStatusFooter();
   });
 

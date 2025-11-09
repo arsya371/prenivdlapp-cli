@@ -10,6 +10,7 @@ const getApi = {
   pinterest: 'https://prenivapi.vercel.app/api/pinterest?url=',
   applemusic: 'https://prenivapi.vercel.app/api/applemusic?url=',
   capcut: 'https://prenivapi.vercel.app/api/capcut?url=',
+  bluesky: 'https://prenivapi.vercel.app/api/bluesky?url=',
 };
 
 

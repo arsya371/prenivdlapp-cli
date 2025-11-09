@@ -11,6 +11,7 @@ const { downloadPinterest } = require('../routes/pinterest');
 const { downloadAppleMusic } = require('../routes/applemusic');
 const { downloadYouTube } = require('../routes/youtube');
 const { downloadCapcut } = require('../routes/capcut');
+const { downloadBluesky } = require('../routes/bluesky');
 
 const major = parseInt(process.versions.node.split('.')[0], 10);
 if (major < 20) {
@@ -129,15 +130,19 @@ async function processUserInput(input) {
       platform = 'CapCut';
       showProcessing('Fetching', ` Analyzing ${platform} video...`);
       await downloadCapcut(url, currentDownloadPath);
+    } else if (hostname.endsWith('bsky.app') || hostname === 'bsky.app' || hostname.endsWith('bsky.social')) {
+      platform = 'Bluesky';
+      showProcessing('Fetching', ` Analyzing ${platform} post...`);
+      await downloadBluesky(url, currentDownloadPath);
     } else {
       console.log('');
-      console.log(chalk.red(' • Unsupported platform. Please provide TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, or CapCut URLs.'));
+      console.log(chalk.red(' • Unsupported platform. Please provide TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, or Bluesky URLs.'));
       showStatusFooter();
     }
   } else {
     console.log('');
     console.log(chalk.gray(' • Please provide a social media URL to download from.'));
-    console.log(chalk.gray(' • Supported platforms: TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut'));
+    console.log(chalk.gray(' • Supported platforms: TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, Bluesky'));
     showStatusFooter();
   }
   

@@ -1,18 +1,19 @@
 # Social Media Downloader CLI (PRENIVDL)
 
-A powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, and YouTube. Designed with beautiful ASCII art and interactive prompts.
+A powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, and CapCut. Designed with beautiful ASCII art and interactive prompts.
 
 ## Features
 
-- **TikTok Downloader** - Download videos with metadata and multiple quality options
+- **TikTok Downloader** - Download videos with metadata and multiple quality options (MP4/MP3)
 - **Facebook Downloader** - Download videos in multiple qualities (HD/SD) and formats (MP4/MP3)
 - **Instagram Downloader** - Download photos and videos from posts and stories
-- **Twitter Downloader** - Download videos from Twitter/X posts
+- **Twitter Downloader** - Download videos from Twitter/X posts with quality selection
 - **Douyin Downloader** - Download videos from Douyin (Chinese TikTok) with multiple quality options
 - **Spotify Downloader** - Download tracks (MP3) and cover images from Spotify
-- **Pinterest Downloader** - Download images, videos, and GIFs from Pinterest pins with multiple quality options
+- **Pinterest Downloader** - Download images from Pinterest pins with multiple quality options
 - **Apple Music Downloader** - Download tracks (MP3) and cover images from Apple Music
-- **YouTube Downloader** - Download videos and audio from YouTube with multiple quality options
+- **YouTube Downloader** - Download videos and audio from YouTube with format selection (video with audio, video only, audio only)
+- **CapCut Downloader** - Download videos from CapCut with quality options (HD No Watermark, No Watermark, Watermark)
 - **Beautiful CLI Interface** - Colorful output with ASCII art banner and custom prompt
 - **Interactive Mode** - User-friendly prompts and selections
 - **Fast Downloads** - Efficient downloading with progress indicators
@@ -131,20 +132,22 @@ Simply paste any of these URLs in interactive mode:
 - **Pinterest**: `https://www.pinterest.com/pin/1234567890/` or `https://pin.it/abc123`
 - **Apple Music**: `https://music.apple.com/id/album/song-name/123456?i=789012`
 - **YouTube**: `https://www.youtube.com/watch?v=ABC123` or `https://youtu.be/ABC123`
+- **CapCut**: `https://www.capcut.com/tv2/ABC123/`
 
 ### Download Organization
 
 Downloaded files are organized by platform with timestamps:
 
-- **TikTok**: `tiktok_video_[timestamp].mp4`
+- **TikTok**: `tiktok_video_[timestamp].mp4` or `tiktok_audio_[timestamp].mp3`
 - **Facebook**: `facebook_[quality]_[timestamp].[format]`
 - **Instagram**: `instagram_media_[number]_[timestamp].[extension]`
-- **Twitter**: `twitter_video_[timestamp].mp4`
+- **Twitter**: `twitter_video_[quality]p_[timestamp].mp4`
 - **Douyin**: `douyin_video_[timestamp].mp4`
 - **Spotify**: `spotify_audio_[timestamp].mp3` or `spotify_image_[timestamp].jpg`
 - **Pinterest**: `pinterest_[pin_id]_[quality].[extension]`
 - **Apple Music**: `applemusic_[artist]_[type]_[timestamp].[extension]`
-- **YouTube**: `youtube_[quality]_[timestamp].[extension]`
+- **YouTube**: `youtube_[title]_[quality].[extension]`
+- **CapCut**: `capcut_[unique_id]_[quality]_[timestamp].mp4`
 
 All files are saved to the specified directory (default: `resultdownload_preniv`).
 

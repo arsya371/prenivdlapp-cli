@@ -1,8 +1,12 @@
-# Prenivdlapp CLI (PRENIVDL)
+# Prenivdlapp CLI - Social Media Video Downloader
 
-Prenivdlapp CLI is a powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, and Bluesky. Designed with beautiful ASCII art and interactive prompts.
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org/)
+[![GitHub Stars](https://img.shields.io/github/stars/arsya371/prenivdlapp-cli?style=social)](https://github.com/arsya371/prenivdlapp-cli)
 
-## Features
+**Free & Open Source Social Media Downloader CLI** - Download videos, images, and audio from 11+ platforms including TikTok, Instagram, Facebook, Twitter/X, YouTube, Spotify, and more.
+
+## Key Features
 
 - **TikTok Downloader** - Download videos with metadata and multiple quality options (MP4/MP3)
 - **Facebook Downloader** - Download videos in multiple qualities (HD/SD) and formats (MP4/MP3)
@@ -83,7 +87,7 @@ cd prenivdlapp-cli
 npm install
 ```
 
-## Usage
+## Quick Start
 
 ### Interactive Mode (Recommended)
 
@@ -120,7 +124,7 @@ prenivdlapp » /path
 Current download path: my_downloads
 ```
 
-### Supported Platforms & URL Examples
+## URL Examples
 
 Simply paste any of these URLs in interactive mode:
 
@@ -138,7 +142,7 @@ Simply paste any of these URLs in interactive mode:
 
 All files are saved to the specified directory (default: `resultdownload_preniv`).
 
-### Cross-Platform Compatibility
+## Cross-Platform Compatibility
 
 This CLI works on:
 - [x] **Windows** (10, 11)
@@ -177,19 +181,21 @@ The CLI includes comprehensive error handling for:
 This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
 
 This means:
-- ✅ **Free to use, modify, and distribute**
-- ✅ **Source code must remain open**
-- ✅ **Any modifications must also be GPL-3.0**
-- ❌ **Cannot be sold as proprietary tools**
+- **Free to use, modify, and distribute**
+- **Source code must remain open**
+- **Any modifications must also be GPL-3.0**
+- **Cannot be sold as proprietary tools**
 
 > [!CAUTION]
 > **Do not sell this tool.** This project is free and open-source under GPL-3.0. Any distribution (free or paid) must include the source code and maintain the same license. Selling this as proprietary tools is strictly prohibited and violates the GPL-3.0 license terms.
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests!
-
----
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest new features
+- Submit pull requests
+- Star this repository
 
 > [!NOTE]
 > This tool is for educational purposes. Please respect the terms of service of the respective social media platforms and only download content you have permission to download.

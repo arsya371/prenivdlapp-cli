@@ -14,6 +14,7 @@ yarn-error.log*
 *.webp
 
 # Logs
+resultdownload_preniv
 logs
 *.log
 

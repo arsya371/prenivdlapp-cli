@@ -9,6 +9,7 @@ const getApi = {
   spotify: 'https://prenivapi.vercel.app/api/spotify?url=',
   pinterest: 'https://prenivapi.vercel.app/api/pinterest?url=',
   applemusic: 'https://prenivapi.vercel.app/api/applemusic?url=',
+  capcut: 'https://prenivapi.vercel.app/api/capcut?url=',
 };
 
 

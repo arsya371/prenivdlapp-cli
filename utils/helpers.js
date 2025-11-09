@@ -75,6 +75,7 @@ function showHelp() {
   console.log(chalk.gray('     - Pinterest (pinterest.com, pin.it)'));
   console.log(chalk.gray('     - Apple Music (music.apple.com)'));
   console.log(chalk.gray('     - YouTube (youtube.com, youtu.be)'));
+  console.log(chalk.gray('     - CapCut (capcut.com)'));
   
   console.log('');
   console.log(chalk.cyan(' Examples:'));
@@ -87,6 +88,7 @@ function showHelp() {
   console.log(chalk.gray('   > https://www.pinterest.com/pin/1234567890/'));
   console.log(chalk.gray('   > https://music.apple.com/id/album/song/123456'));
   console.log(chalk.gray('   > https://www.youtube.com/watch?v=ABC123'));
+  console.log(chalk.gray('   > https://www.capcut.com/tv2/ABC123/'));
   console.log('');
   console.log(chalk.cyan(' Path Management:'));
   console.log(chalk.gray('   > /setpath my_downloads'));

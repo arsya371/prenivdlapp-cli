@@ -1,6 +1,6 @@
-# Social Media Downloader CLI (PRENIVDL)
+# Prenivdlapp CLI (PRENIVDL)
 
-A powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, and Bluesky. Designed with beautiful ASCII art and interactive prompts.
+Prenivdlapp CLI is a powerful command-line interface for downloading videos and media from TikTok, Facebook, Instagram, Twitter, Douyin, Spotify, Pinterest, Apple Music, YouTube, CapCut, and Bluesky. Designed with beautiful ASCII art and interactive prompts.
 
 ## Features
 

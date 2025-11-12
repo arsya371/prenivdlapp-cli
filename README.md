@@ -10,7 +10,7 @@
 
 ## Key Features
 
-- **TikTok Downloader** - Download videos/image with metadata and multiple quality options (MP4/JPG/JPEG/PNG/WEBP/MP3)
+- **TikTok Downloader** - Download videos/image with metadata and multiple quality options
 - **Facebook Downloader** - Download videos in multiple qualities (HD/SD) and formats (MP4/MP3)
 - **Instagram Downloader** - Download photos and videos from posts and stories
 - **Twitter Downloader** - Download videos from Twitter/X posts with quality selection
@@ -31,7 +31,9 @@
 
 ## Installation
 
-### Linux (Ubuntu/Debian)
+<details>
+  <summary>Linux (Ubuntu/Debian)</summary>
+
 ```bash
 # Update system
 sudo apt update && sudo apt upgrade -y
@@ -48,8 +50,11 @@ git clone https://github.com/arsya371/prenivdlapp-cli.git
 cd prenivdlapp-cli
 npm install
 ```
+</details>
 
-### macOS
+<details>
+  <summary>macOS</summary>
+    
 ```bash
 # Install Homebrew (if not already installed)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -66,8 +71,11 @@ git clone https://github.com/arsya371/prenivdlapp-cli.git
 cd prenivdlapp-cli
 npm install
 ```
+</details>
 
-### Windows
+<details>
+  <summary>Windows</summary>
+    
 ```bash
 # Download Node.js from nodejs.org
 # Install Git from git-scm.com
@@ -78,8 +86,11 @@ git clone https://github.com/arsya371/prenivdlapp-cli.git
 cd prenivdlapp-cli
 npm install
 ```
+</details>
 
-### Termux (Android)
+<details>
+  <summary>Termux (Android)</summary>
+
 ```bash
 # Update packages
 pkg update && pkg upgrade
@@ -92,12 +103,9 @@ git clone https://github.com/arsya371/prenivdlapp-cli.git
 cd prenivdlapp-cli
 npm install
 ```
+</details>
 
 ## Quick Start
-
-### Interactive Mode (Recommended)
-
-Simply run the application without any arguments to start interactive mode:
 
 ```bash
 # Linux/macOS/Termux:
@@ -113,11 +121,26 @@ node index.js
 prnvapp.bat
 ```
 
+## Updating the Script
+
+```bash
+# Navigate to the prenivdlapp-cli directory
+cd prenivdlapp-cli
+
+# Fetch the latest updates from the repository
+git pull origin main
+
+# Install if there are additional dependencies
+npm install
+```
+
 ### Interactive Commands
 
 Once in interactive mode, you can use these commands:
 
 - **`/help`** - Show available commands
+- **`/tutor`** - Show quick tutorial
+- **`/platform`** - List all supported platforms
 - **`/clear`** - Clear the screen
 - **`/quit`** - Exit the application
 - **`/path`** - Show current download directory

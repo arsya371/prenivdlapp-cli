@@ -405,7 +405,7 @@ const buildDownloadChoices = (platform, data = {}) => {
       return choices;
     },
     weibo: () => {
-      const { hasVideo = false, videos = [], images = [] } = data;
+      const { hasVideo = true, videos = [], images = [] } = data;
       if (hasVideo) {
         choices.push({
           name: chalk.bold.cyan(' Video'),

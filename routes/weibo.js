@@ -38,6 +38,7 @@ async function downloadWeibo(url, basePath = 'resultdownload_preniv') {
     console.log('');
 
     const hasImages = data.data.hasAtlas && data.data.original && data.data.original.atlas && data.data.original.atlas.length > 0;
+    const hasVideo = data.data.hasVideo;
 
     if (!hasVideo && !hasImages) {
       console.log(chalk.yellow(' No downloadable media found in this post.'));

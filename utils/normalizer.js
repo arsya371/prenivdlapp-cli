@@ -13,33 +13,42 @@ class Normalizer {
         author: data.author || null,
         downloads: {
           video: Array.isArray(data.video) ? data.video : [],
-          audio: Array.isArray(data.audio) ? data.audio : []
+          audio: Array.isArray(data.audio) ? data.audio : [],
+          images: Array.isArray(data.images) ? data.images : []
         },
         metadata: {
           audio_title: data.title_audio || null
         }
       };
     }
-    
+
     let videoDownloads = [];
     let audioDownloads = [];
-    
+    let imageDownloads = [];
+
     if (Array.isArray(data.downloads)) {
       videoDownloads = data.downloads;
     } else if (data.downloads && typeof data.downloads === 'object') {
       videoDownloads = data.downloads.video || [];
       audioDownloads = data.downloads.audio || [];
+      imageDownloads = data.downloads.images || [];
     } else if (data.video) {
       videoDownloads = Array.isArray(data.video) ? data.video : [data.video];
     }
-    
+
+    // Handle images array separately if it exists at the root level
+    if (data.images && Array.isArray(data.images)) {
+      imageDownloads = data.images;
+    }
+
     return {
       title: data.title || null,
       thumbnail: data.thumbnail || null,
       author: data.author || null,
       downloads: {
         video: videoDownloads,
-        audio: audioDownloads
+        audio: audioDownloads,
+        images: imageDownloads
       },
       metadata: {
         audio_title: data.title_audio || null

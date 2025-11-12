@@ -10,7 +10,7 @@
 
 ## Key Features
 
-- **TikTok Downloader** - Download videos with metadata and multiple quality options (MP4/MP3)
+- **TikTok Downloader** - Download videos/image with metadata and multiple quality options (MP4/JPG/JPEG/PNG/WEBP/MP3)
 - **Facebook Downloader** - Download videos in multiple qualities (HD/SD) and formats (MP4/MP3)
 - **Instagram Downloader** - Download photos and videos from posts and stories
 - **Twitter Downloader** - Download videos from Twitter/X posts with quality selection

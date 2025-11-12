@@ -45,7 +45,7 @@ async function downloadTikTok(url, basePath = 'resultdownload_preniv') {
       }
     }
 
-    if (!data || (!data.downloads.video.length && !data.downloads.audio.length)) {
+    if (!data || (!data.downloads.video.length && !data.downloads.audio.length && !data.downloads.image.length)) {
       spinner.fail(chalk.red(' Failed to fetch TikTok video data'));
       console.log(chalk.gray('   • The API returned an error or invalid response'));
       return;
@@ -63,11 +63,35 @@ async function downloadTikTok(url, basePath = 'resultdownload_preniv') {
     }
     console.log('');
 
-    const allDownloads = [...data.downloads.video, ...data.downloads.audio];
-    const downloadChoices = allDownloads.map((item, index) => ({
-      name: ` ${item.text || item.quality || 'Download'}`,
-      value: { url: item.url, text: item.text || item.quality, index }
-    }));
+    const downloadChoices = [];
+
+    data.downloads.video.forEach((url, index) => {
+      downloadChoices.push({
+        name: ` Video ${index + 1}`,
+        value: { url, text: `Video ${index + 1}`, type: 'video' }
+      });
+    });
+    
+    data.downloads.audio.forEach((url, index) => {
+      downloadChoices.push({
+        name: ` Audio ${index + 1}`,
+        value: { url, text: `Audio ${index + 1}`, type: 'audio' }
+      });
+    });
+    
+    data.downloads.image.forEach((url, index) => {
+      downloadChoices.push({
+        name: ` Image ${index + 1}`,
+        value: { url, text: `Image ${index + 1}`, type: 'image' }
+      });
+    });
+    
+    if (data.downloads.image.length > 1) {
+      downloadChoices.push({
+        name: ` Download All Images (${data.downloads.image.length})`,
+        value: { urls: data.downloads.image, text: `All Images`, type: 'all-images' }
+      });
+    }
     
     downloadChoices.push({
       name: chalk.gray(' Cancel'),
@@ -88,8 +112,45 @@ async function downloadTikTok(url, basePath = 'resultdownload_preniv') {
       return;
     }
     
+    if (selectedDownload.type === 'all-images') {
+      const downloadSpinner = ora(` Downloading all images...`).start();
+      const timestamp = Date.now();
+      
+      for (let i = 0; i < selectedDownload.urls.length; i++) {
+        const url = selectedDownload.urls[i];
+        const urlLower = url.toLowerCase();
+        let extension = 'jpg';
+        
+        if (urlLower.includes('.jpeg') || urlLower.includes('.jpg')) {
+          extension = 'jpg';
+        } else if (urlLower.includes('.png')) {
+          extension = 'png';
+        } else if (urlLower.includes('.webp')) {
+          extension = 'webp';
+        }
+        
+        const filename = `tiktok_${timestamp}_image_${i + 1}.${extension}`;
+        await downloadFile(url, filename, downloadSpinner, basePath);
+      }
+      
+      downloadSpinner.succeed(chalk.green(` Downloaded ${selectedDownload.urls.length} images successfully!`));
+      return;
+    }
+    
     const downloadSpinner = ora(` Downloading ${selectedDownload.text}...`).start();
-    const extension = selectedDownload.text.toLowerCase().includes('mp3') ? 'mp3' : 'mp4';
+    let extension = 'mp4';
+    if (selectedDownload.type === 'audio') {
+      extension = 'mp3';
+    } else if (selectedDownload.type === 'image') {
+      const url = selectedDownload.url.toLowerCase();
+      if (url.includes('.jpeg') || url.includes('.jpg')) {
+        extension = 'jpg';
+      } else if (url.includes('.png')) {
+        extension = 'png';
+      } else if (url.includes('.webp')) {
+        extension = 'webp';
+      }
+    }
     const filename = `tiktok_${Date.now()}.${extension}`;
     await downloadFile(selectedDownload.url, filename, downloadSpinner, basePath);
   } catch (error) {

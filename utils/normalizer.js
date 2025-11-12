@@ -13,7 +13,8 @@ class Normalizer {
         author: data.author || null,
         downloads: {
           video: Array.isArray(data.video) ? data.video : [],
-          audio: Array.isArray(data.audio) ? data.audio : []
+          audio: Array.isArray(data.audio) ? data.audio : [],
+          image: Array.isArray(data.image) ? data.image : []
         },
         metadata: {
           audio_title: data.title_audio || null
@@ -23,12 +24,30 @@ class Normalizer {
     
     let videoDownloads = [];
     let audioDownloads = [];
+    let imageDownloads = [];
     
     if (Array.isArray(data.downloads)) {
       videoDownloads = data.downloads;
     } else if (data.downloads && typeof data.downloads === 'object') {
-      videoDownloads = data.downloads.video || [];
-      audioDownloads = data.downloads.audio || [];
+      if (data.downloads.video) {
+        const videos = Array.isArray(data.downloads.video) ? data.downloads.video : [data.downloads.video];
+        videos.forEach(url => {
+          if (typeof url === 'string') {
+            const lowerUrl = url.toLowerCase();
+            if (lowerUrl.includes('.jpeg') || lowerUrl.includes('.jpg') || lowerUrl.includes('.png') || lowerUrl.includes('.webp')) {
+              imageDownloads.push(url);
+            } else {
+              videoDownloads.push(url);
+            }
+          } else {
+            videoDownloads.push(url);
+          }
+        });
+      }
+      audioDownloads = Array.isArray(data.downloads.audio) ? data.downloads.audio : [];
+      if (data.downloads.image) {
+        imageDownloads = Array.isArray(data.downloads.image) ? data.downloads.image : [data.downloads.image];
+      }
     } else if (data.video) {
       videoDownloads = Array.isArray(data.video) ? data.video : [data.video];
     }
@@ -39,10 +58,11 @@ class Normalizer {
       author: data.author || null,
       downloads: {
         video: videoDownloads,
-        audio: audioDownloads
+        audio: audioDownloads,
+        image: imageDownloads
       },
       metadata: {
-        audio_title: data.title_audio || null
+        audio_title: data.title_audio || data.metadata?.audio_title || null
       }
     };
   }
